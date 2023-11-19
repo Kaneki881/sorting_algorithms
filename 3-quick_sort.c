@@ -8,9 +8,9 @@
  */
 void swap(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -23,28 +23,28 @@ void swap(int *a, int *b)
  */
 size_t partition(int *array, size_t low, size_t high, size_t size)
 {
-    int pivot = array[high];
-    size_t i = low - 1;
-    size_t j;
+	int pivot = array[high];
+	size_t i = low - 1;
+	size_t j;
 
-    for (j = low; j < high; j++)
-    {
-        if (array[j] <= pivot)
-        {
-            i++;
-            if (i != j)
-            {
-                swap(&array[i], &array[j]);
-                print_array(array, size);
-            }
-        }
-    }
+	for (j = low; j < high; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			i++;
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
+		}
+	}
 
-    swap(&array[i + 1], &array[high]);
-    if (array[i + 1] != array[high])
-        print_array(array, size);
+	swap(&array[i + 1], &array[high]);
+	if (array[i + 1] != array[high])
+		print_array(array, size);
 
-    return (i + 1);
+	return (i + 1);
 }
 
 /**
@@ -57,17 +57,17 @@ size_t partition(int *array, size_t low, size_t high, size_t size)
  */
 void quick_sort_recursion(int *array, size_t low, size_t high, size_t size)
 {
-    size_t pivot_index;
+	size_t pivot_index;
 
-    if (low < high)
-    {
-        pivot_index = partition(array, low, high, size);
+	if (low < high)
+	{
+		pivot_index = partition(array, low, high, size);
 
-        if (pivot_index > 0)
-            quick_sort_recursion(array, low, pivot_index - 1, size);
-        if (pivot_index < high)
-            quick_sort_recursion(array, pivot_index + 1, high, size);
-    }
+		if (pivot_index > 0)
+			quick_sort_recursion(array, low, pivot_index - 1, size);
+		if (pivot_index < high)
+			quick_sort_recursion(array, pivot_index + 1, high, size);
+	}
 }
 
 /**
@@ -78,8 +78,8 @@ void quick_sort_recursion(int *array, size_t low, size_t high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-    if (!array || size < 2)
-        return;
+	if (!array || size < 2)
+		return;
 
-    quick_sort_recursion(array, 0, size - 1, size);
+	quick_sort_recursion(array, 0, size - 1, size);
 }

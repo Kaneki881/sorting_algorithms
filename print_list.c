@@ -7,21 +7,21 @@
  */
 void print_list(const listint_t *list)
 {
-    if (!list)
-    {
-        printf("The list is empty.\n");
-        return;
-    }
+	if (!list)
+	{
+		printf("The list is empty.\n");
+		return;
+	}
 
-    while (list)
-    {
-        printf("%d", list->n);
-        
-        if (list->next)
-            printf(", ");
-        else
-            printf("\n");
+	while (list)
+	{
+		printf("%d", list->n);
 
-        list = list->next;
-    }
+		if (list->next)
+			printf(", ");
+		else
+			printf("\n");
+
+		list = list->next;
+	}
 }
