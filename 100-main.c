@@ -25,5 +25,5 @@ int main(void)
 *	compare index0 with index+Gap
 *		if less swap
 *		(keep moving to next element)
-*	reduce gap
+*reduce gap
 */
